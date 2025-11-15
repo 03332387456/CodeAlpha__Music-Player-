@@ -1,4 +1,3 @@
-require('dotenv').config()
 console.log("hello world");
 
 const audioPlayer = {
@@ -59,10 +58,10 @@ let Close = document.getElementById("close")
 let playListCard = document.getElementById("playListCard")
 let Card = document.getElementById("Card")
 let songsLibraryUl = document.getElementById("songsLibraryUl")
-// let li = document.getElementById("li")
-// let seekbar = document.getElementById("seekbar")
-// let play = document.getElementById("play")
-// let previous = document.getElementById("previous")
+let li = document.getElementById("li")
+let seekbar = document.getElementById("seekbar")
+let play = document.getElementById("play")
+let previous = document.getElementById("previous")
 
 
 Hamburgerheader.addEventListener("click", () => {
@@ -83,15 +82,14 @@ Close.addEventListener("click", () => {
 let songs = [];
 let currentSong = new Audio
 
-// const GITHUB_TOKEN = "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";
-const token = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = "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";;
 
 // Fetch all playlists
 async function fetchPlaylists() {
     try {
         let api = await fetch("https://api.github.com/repos/03332387456/musics-/contents/Music", {
             headers: {
-                Authorization: `token ${token}`
+                Authorization: `token ${GITHUB_TOKEN}`
             }
         });
 
@@ -118,7 +116,7 @@ async function fetchSongs() {
             try {
                 let songsRes = await fetch(element.url, {
                     headers: {
-                        Authorization: `token ${token}`
+                        Authorization: `token ${GITHUB_TOKEN}`
                     }
                 });
                 let songsData = await songsRes.json();
