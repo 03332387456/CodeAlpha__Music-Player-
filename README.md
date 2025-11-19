@@ -1,8 +1,6 @@
-visit Music player : https://music-player-f3e9e.web.app/
-
 If the {GITHUB_TOKEN} token in app.js contains dont work correctly . you can also use this token 
 
-GITHUB_TOKEN = "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" ------
+GITHUB_TOKEN = "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" ------
 
 Its fully working code 
 
